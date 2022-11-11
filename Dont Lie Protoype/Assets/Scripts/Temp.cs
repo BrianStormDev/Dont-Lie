@@ -66,7 +66,7 @@ namespace Com.MyCompany.MyGame{
 
         #region MonoBehaviorPunCallbacks Callbacks
         public override void OnConnectedToMaster(){
-            Debug.Log("PUN Bascis Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
+            Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
             //We try to join a room, if doesn't work, we'll be called back w/ OnJoinRandomFailed()
             PhotonNetwork.JoinRandomRoom();
         }
