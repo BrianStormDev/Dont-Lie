@@ -3,6 +3,7 @@ using UnityEngine;
 namespace Photon.Pun.Cam{
     public class CameraWork : MonoBehaviour
     {
+        /*
     #region Private Fields
     
     private float distance = 0.0f;
@@ -71,7 +72,8 @@ namespace Photon.Pun.Cam{
         OnStartFollowing();
         
     }
-}
+    */
+} 
 
 }
 

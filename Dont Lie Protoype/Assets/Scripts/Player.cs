@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
-    PhotonView view;
+    /*PhotonView view;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,4 +34,5 @@ public class Player : MonoBehaviour
     {
         
     }
+    */
 }
