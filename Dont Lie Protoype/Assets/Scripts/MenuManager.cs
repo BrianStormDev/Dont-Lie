@@ -7,8 +7,8 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     [SerializeField] Menu[] menus;
 
-    void Awake(){
-        Instance = this;
+    void Awake(){ //Called when script object is initialized
+        Instance = this; //"this" refers to the instance of the script
     }
 
     public void OpenMenu (string menuName){
@@ -16,14 +16,10 @@ public class MenuManager : MonoBehaviour
             if(menus[i].menuName==menuName){
                 if (menus[i].open)
                     menus[i].Close();
+                menus[i].Open();
             }
             else if (menus[i].open)
                 menus[i].Close();
-            menus[i].Open();
         }
-    }
-
-    
-
-    
+    } 
 }

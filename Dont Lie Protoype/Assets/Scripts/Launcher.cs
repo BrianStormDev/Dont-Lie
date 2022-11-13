@@ -27,14 +27,14 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void CreateRoom(){
         if (string.IsNullOrEmpty(roomNameInputField.text))
-            return;
+            return;  
         PhotonNetwork.CreateRoom(roomNameInputField.text);
         MenuManager.Instance.OpenMenu("Loading");
     }
 
     public override void OnJoinedRoom(){ //Called when u join or create a room
-        MenuManager.Instance.OpenMenu("Loading");
         MenuManager.Instance.OpenMenu("Room");
+        roomNameText.text = PhotonNetwork.CurrentRoom.Name;
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message){
