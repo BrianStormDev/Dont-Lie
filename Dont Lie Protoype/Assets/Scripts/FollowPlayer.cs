@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public float currentX;
     public float currentY;
     public float currentZ;
-    private Vector3 offset = new Vector3(0, 2, 0);
+    private Vector3 offset = new Vector3(0, 1.2f, 0.5f);
 
     // Start is called before the first frame update
     void Start()
