@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
+using System.Linq; // For .Count()
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -13,7 +14,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
+    [SerializeField] Transform playerListContent;
     [SerializeField] GameObject roomListItemPrefab;
+    [SerializeField] GameObject PlayerListItemPrefab;
 
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby(){
         MenuManager.Instance.OpenMenu("Title");
         Debug.Log("You have successfully joined a lobby");
+        PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000");
     }
 
     public void CreateRoom(){
@@ -46,6 +50,12 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom(){ //Called when u join or create a room
         MenuManager.Instance.OpenMenu("Room");
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+
+        Player[] players = PhotonNetwork.PlayerList;
+        for (int i = 0; i < players.Count(); i++)
+        {
+            Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+        }
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message){
@@ -81,6 +91,11 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
         }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
     }
 
     // Update is called once per frame
