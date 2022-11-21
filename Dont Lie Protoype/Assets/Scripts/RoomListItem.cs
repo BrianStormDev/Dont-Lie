@@ -9,7 +9,7 @@ public class RoomListItem : MonoBehaviour
 
     [SerializeField] TMP_Text text;
 
-    RoomInfo info;
+    public RoomInfo info; // Is public so we can access in launcher script 
 
     public void SetUp(RoomInfo _info)
     {
