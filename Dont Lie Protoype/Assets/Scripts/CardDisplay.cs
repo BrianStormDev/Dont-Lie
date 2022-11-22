@@ -4,7 +4,8 @@ using TMPro;
 
 public class CardDisplay : MonoBehaviour
 {
-    public Role role;  //  "And now, we can access all of the data inside of our script..."
+    public RoleInfo role;
+    //public Role role;
 
     public TMP_Text roleName;
     public TMP_Text roleDescription;

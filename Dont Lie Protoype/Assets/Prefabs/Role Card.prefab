@@ -393,10 +393,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 345047720713739746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8ca88180acc7b43b707a17c9b38b72, type: 3}
+  m_Script: {fileID: 11500000, guid: 84f3d88f8ccb52b42bc49122ca2413b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  role: {fileID: 11400000, guid: 40df8f0d34e6ccc42a130a63b5fb1dff, type: 2}
+  role: {fileID: 0}
   roleName: {fileID: 345047719350528381}
   roleDescription: {fileID: 345047719886140406}
   roleIcon: {fileID: 2665613859821692506}
