@@ -22,4 +22,8 @@ public class MenuManager : MonoBehaviour
                 menus[i].Close();
         }
     } 
+
+    public void Quit(){
+        Application.Quit();
+    }
 }
