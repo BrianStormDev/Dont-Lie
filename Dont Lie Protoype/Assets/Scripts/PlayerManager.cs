@@ -8,6 +8,7 @@ using System.IO;
 public class PlayerManager : MonoBehaviour
 {
     PhotonView PV;
+    Vector3 position = new Vector3 (4.5f, -3.6f, 6.1f);
 
     void Awake()
     {
@@ -19,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         //instantiate player controller
         Debug.Log("Instantiated Player Controller");
 
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Stylized Astronaut"), new Vector3 (16f, 1.861f, 7.0f), Quaternion.identity );
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Stylized Astronaut"), position, Quaternion.identity );
     }
 
     // Start is called before the first frame update
