@@ -1,2 +1,2 @@
 # Dont-Lie
-Fall 2022 Game for Project {}
+DVC Project for Fall 2022 @ Project Bracket
